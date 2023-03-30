@@ -9,7 +9,7 @@ from streamlit_pandas_profiling import st_profile_report
 st.set_page_config(page_title="Rating Analysis", layout="centered")
 
 st.title("Active Chess Players Above 2300 Elo")
-st.markdown("Based on data scraped at website 2700chess.com")
+st.markdown("Based on data scraped at website 2700chess.com at March 28th 2023")
 
 # Load your DataFrame
 @st.cache_data
