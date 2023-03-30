@@ -22,6 +22,15 @@ def load_data():
 data = load_data()
 data['Age'] = data['Age'].apply(lambda x: int(x))
 
+st.download_button(
+    "Press to Download",
+    data,
+    "2700_data.csv",
+    "text/csv",
+    key='download-csv'
+    )
+
+
 # Create a sidebar for filters
 st.sidebar.title("Filters")
 
