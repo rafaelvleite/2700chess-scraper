@@ -18,6 +18,7 @@ with col2:
 
 st.title("Active Chess Players Above 2300 Elo")
 st.markdown("Based on data scraped at website 2700chess.com at March 28th 2023")
+st.markdown("You can find full code on Github repo: https://github.com/rafaelvleite/2700chess-scraper")
 
 # Load your DataFrame
 @st.cache_data
