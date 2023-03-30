@@ -8,6 +8,14 @@ from streamlit_pandas_profiling import st_profile_report
 # Create a wider layout
 st.set_page_config(page_title="Rating Analysis", layout="centered")
 
+col1, col2 = st.columns([1, 3], gap='large')
+with col1:
+    st.image('rafaelleite.png', width=150)
+with col2: 
+    st.title("MindGamesChess")
+    st.markdown("Follow me on Twitch: https://www.twitch.tv/mindgameschess")
+    st.markdown("Follow me on YouTube: https://youtube.com/@mindgameschessYT")
+
 st.title("Active Chess Players Above 2300 Elo")
 st.markdown("Based on data scraped at website 2700chess.com at March 28th 2023")
 
@@ -22,7 +30,7 @@ def load_data():
 data = load_data()
 data['Age'] = data['Age'].apply(lambda x: int(x))
 
-@st.experimental_memo
+@st.cache_data
 def convert_df(df):
     return df.to_csv(index=False).encode('utf-8')
 
