@@ -28,7 +28,7 @@ def convert_df(df):
 
 csv = convert_df(data)
 st.download_button(
-    "Press to Download",
+    "Press to Download CSV Data",
     csv,
     "2700_data.csv",
     "text/csv",
