@@ -22,13 +22,18 @@ def load_data():
 data = load_data()
 data['Age'] = data['Age'].apply(lambda x: int(x))
 
+@st.experimental_memo
+def convert_df(df):
+    return df.to_csv(index=False).encode('utf-8')
+
+csv = convert_df(data)
 st.download_button(
     "Press to Download",
-    data,
+    csv,
     "2700_data.csv",
     "text/csv",
     key='download-csv'
-    )
+)
 
 
 # Create a sidebar for filters
